@@ -1,0 +1,31 @@
+package com.bestypie.ktnavigation.screens.detail
+
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+
+@Composable
+fun DetailScreen(navController: NavController) {
+    Scaffold(topBar = {
+        Row(modifier = Modifier.clickable {
+            navController.popBackStack();
+        }) {
+          Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Arrow Back")
+            Spacer(modifier = Modifier.width(20.dp))
+            Text(text = "Back", style = MaterialTheme.typography.h5)
+        }
+    }) {
+
+    }
+}
